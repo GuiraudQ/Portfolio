@@ -1,0 +1,16 @@
+@mixin absoluteEl ($top, $right, $bottom, $left, $x, $y){
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $letf;
+    transform: translate($x, $y);
+}
+@mixin pseudoEl ($top, $right, $bottom, $left, $x, $y){
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $letf;
+    transform: translate($x, $y);
+}

@@ -1,0 +1,522 @@
+@font-face {
+    font-family: "Kiona";
+    src: url('Kiona-Regular.ttf');
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *GENERAL* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+html, body{
+    scroll-behavior: smooth;
+    font-family: kiona;
+}
+
+h2{
+    font-size: 4rem;
+}
+.gg-chevron-down {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px;
+}
+.gg-chevron-down::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    left: 4px;
+    top: 2px
+}
+.mega{
+    height: 100vh;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *ABOUT* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#about{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff797b ,#FAF0E6 );
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*~~~~~~~~~~~ *Ligne centrale* ~~~~~~~~~~~~~*/
+
+#about::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    backdrop-filter: blur (5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*~~~~~~~~~~~ *Tache flouté en arriere plan* ~~~~~~~~~~~~~*/
+
+#about .color{
+    position: absolute;
+    filter: blur(75px);
+}
+#about .color:nth-child(1){
+    background: #F26BA8;
+    width: 50vw;
+    height: 50vw;
+    top: -25vw;
+}
+#about .color:nth-child(2){
+    background: #786E93;
+    width: 40vw;
+    height: 40vw;
+    bottom: 0%;
+    left: -5vw;
+    transform: rotate(45deg);
+}
+#about .color:nth-child(3){
+    background: #FFFD87;
+    width: 30vw;
+    height: 30vw;
+    bottom: 20%;
+    right: 0%;
+}
+
+/*~~~~~~~~~~~ *Bouton Logo effet glass* ~~~~~~~~~~~~~*/
+
+#about img{
+    width: 10vw;
+    min-width: 120px;
+    height: auto;
+    padding: 10px;
+}
+#about ul{
+    position: relative;
+    display: flex;
+    z-index: 2;
+    margin: 10px;
+}
+#about ul li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+    border-radius: 25%;
+}
+#about ul li:hover{
+    transform: translateY(-4rem);
+}
+#about ul li a::before{
+    content: "";
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(45deg) translateX(275px);
+    transition: 0.5s;
+}
+#about ul li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
+}
+
+/*~~~~~~~~~~~ *Div Prenom + Poste* ~~~~~~~~~~~~~*/
+
+#about div.name{
+    position: absolute;
+    bottom: 25vh;
+    text-align: center;
+    font-family: Kiona,sans-serif;
+    color: #fff;
+    z-index: 2;
+}
+#about div.name h1{
+    padding: 5px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+#about div.name h2{
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+/*~~~~~~~~~~~ *Bouton fleche bas* ~~~~~~~~~~~~~*/
+
+#about a.bouton{
+    position: absolute;
+    bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    width: 15rem;
+    height: 5rem;
+    border-radius: 100px;
+    z-index: 2;
+}
+
+#about span.coord{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+
+/*~~~~~~~~~~~ *Animation du bouton* ~~~~~~~~~~~~~*/
+
+@keyframes animate{
+    0%{
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        /* border: 0px solid rgba(255, 255, 255, 0); */
+    }
+    100%{
+        width: 35rem;
+        height: 35rem;
+        opacity: 0.8;
+        /* border: 50px solid rgba(255, 255, 255, 0); */
+    }
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *Menu* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+
+
+#menu-stick{
+    position: sticky;
+    background: #e0e0e0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+}
+
+/*~~~~~~~~~~~ *Logo du menu* ~~~~~~~~~~~~~*/
+
+#menu-stick div.logo{
+    margin-left: 3vw;
+}
+#menu-stick img{
+    margin-left: 3vw;
+    width: 100px;
+    height: auto;
+    padding: 10%;
+}
+/*~~~~~~~~~~~ *Boutons du menu* ~~~~~~~~~~~~~*/
+
+#menu-stick div.link{
+    margin-right: 3vw;
+    overflow-x: hidden;
+}
+#menu-stick div.link ul{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-direction: column;
+}
+#menu-stick div.link ul li {
+    width: 150px;
+    padding: 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    text-align: center;
+}
+#menu-stick div.link ul li:nth-child(1){
+    border-radius: 25px 25px 0 0;
+}
+#menu-stick div.link ul li:last-child {
+    border-right: none;
+    border-radius: 0 0 25px 25px;
+}
+#menu-stick div.link ul li:hover{
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.05);
+                /* inset -2px -2px 10px rgba(0, 0, 0, 1),
+                inset 2px 2px 10px rgba(255, 255, 255, 1); */
+}
+#menu-stick div.link ul li.active{
+    background: #e0e0e0;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+}
+#menu-stick div.link ul li a{
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Kiona","sans-serif";
+    color: #6f6f6f;
+    text-decoration: none;
+}
+#menu-stick div.link ul li.active a {
+    color: #f586a1;
+}
+#menu-stick div.link div.activator{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+}
+#menu-stick div.link div.activator:hover{
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                2px 2px 6px rgba(0, 0, 0, 0.05);
+}
+#menu-stick div.link div.burger {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#menu-stick div.link div.burger span.line1, span.line3{
+    background: #6f6f6f;
+    height: 2px;
+    width: 20px;
+    border-radius: 1px;
+    margin: 3px;
+}
+#menu-stick div.link div.burger span.line2{
+    background: #6f6f6f;
+    height: 2px;
+    width: 15px;
+    border-radius: 1px;
+    margin: 3px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *COMPETENCES* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#competences {
+    background: linear-gradient(to bottom, #F26BA8 ,#786E93 );
+    padding: 1%;
+}
+#competences .comp-cont::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80%;
+    width: 50%;
+    z-index: 1;
+    backdrop-filter: blur (5px);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+#competences .comp-cont{
+    position: relative;
+    /* width: 95%;
+    height: 95%;
+    margin: auto; */
+    /* left: 2.5%;
+    top: 2.5%; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+#competences h2{
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+#competences .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    z-index: 3;
+}
+#competences .cards .card{
+    margin: 25px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+    transform-style: preserve-3d;
+}
+#competences .cards .card .percent{
+    margin: 20px;
+    width: 120px;
+    height: 120px;
+}
+#competences .cards .card .percent circle{
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 10;
+    transform: translate(10px, 10px);
+    stroke-linecap: round;
+
+}
+#competences .cards .card .percent circle:nth-child(2){
+    stroke: #fff;
+    stroke-dasharray: 315px;
+    stroke-dashoffset: calc(315px - (315px * 90) / 100 + 10px);
+}
+#competences .cards .card img{
+    position: absolute;
+    top: 55px;
+    left: 75px;
+    width: 90px;
+    height: 90px;
+    transition: all 0.75s ease-out;
+}
+#competences .cards .card .text{
+    margin: 10px 0 15px 0;
+    color: white;
+    text-align: center;
+}
+#competences .cards .card .text h3{
+    font-size: 5rem;
+    transition: all 0.75s ease-out;
+}
+#competences .cards .card .text span{
+    font-size: 2rem;
+}
+#competences .cards .card .text p{
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    transition: all 0.75s ease-out;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *Responsive* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media screen and (min-width: 500px){
+    /*~~~~~~~~~~~~~~~~~~~~~~ *ABOUT* ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    #about .color{
+        filter: blur(150px);
+    }
+    #about div.name h1{
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+    }
+    #about div.name h2{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 900px){
+    /*~~~~~~~~~~~~~~~~~~~~~~ *ABOUT* ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    #about .color{
+        filter: blur(200px);
+    }
+    #about div.name h1{
+        font-size: 5rem;
+        letter-spacing: 0.5rem;
+    }
+    #about div.name h2{
+
+        font-size: 3rem;
+    }
+    /*~~~~~~~~~~~~~~~~~~~~~~ *MENU* ~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+    #menu-stick div.link div.activator{
+        display: none;
+    }
+    #menu-stick div.link {
+        border-radius: 50px;
+        box-shadow: -1px -1px 3px rgba(255, 255, 255, 1),
+                    2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+    #menu-stick div.link ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        flex-direction: row;
+    }
+    #menu-stick div.link ul li {
+        width: auto;
+        padding: 10px;
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    }
+    #menu-stick div.link ul li:nth-child(1){
+        border-radius: 50px 0 0 50px;
+    }
+    #menu-stick div.link ul li:last-child {
+        border-right: none;
+        border-radius: 0 50px 50px 0;
+    }
+    #menu-stick div.link ul li:hover{
+        background: linear-gradient(145deg, #cacaca, #f0f0f0);
+        box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+                    2px 2px 6px rgba(0, 0, 0, 0.05);
+                    /* inset -2px -2px 10px rgba(0, 0, 0, 1),
+                    inset 2px 2px 10px rgba(255, 255, 255, 1); */
+    }
+    #menu-stick div.link ul li.active{
+        background: #e0e0e0;
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+                    inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+    }
+    #menu-stick div.link ul li a{
+        padding: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Kiona","sans-serif";
+        color: #6f6f6f;
+        text-decoration: none;
+    }
+    #menu-stick div.link ul li.active a {
+        color: #f586a1;
+    }
+}
+
+@media screen and (max-height: 750px){
+    #about div.name{
+        bottom: 15vh;
+    }
+}
