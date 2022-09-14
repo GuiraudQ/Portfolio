@@ -1,0 +1,200 @@
+// ~~~ Import
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+// ~~~ Variables
+// ~~~ General
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+// ~~~  ~~~ Header
+header{
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    z-index: 100;
+    position: fixed;
+    #foldableTop{
+        width: 100%;
+        height: 50vh;
+        background-image: url(image/Smoke.png);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        animation: moovingBg 240s linear infinite;
+
+        transform-origin: top;
+        transition: all 2s ease-in-out;
+        transform-style: preserve-3d;
+        #monTest{
+            width: 150px;
+            height: 150px;
+
+            z-index: 102;
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transition: all 2s ease-in-out;
+            transform-style: preserve-3d;
+            transform-origin: bottom;
+            transform: translate(50%, 50%) perspective(1500px);
+        }
+    }
+    #hLogo{
+        width: fit-content;
+        border-radius: 25%;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        transition: 0.5s;
+        overflow: hidden;
+        z-index: 102;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) perspective(1500px);
+        transform-style: preserve-3d;
+        &:hover{
+            transform: translate(50%, -60%);
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            top : 0;
+            left: 0;
+            width: 20px;
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 10px 5px rgba(255,255,255,0.3);
+            transform: skewX(45deg) translateX(400px);
+            transition: 0.7s;
+        }
+        &:hover::before{
+            transform: skewX(45deg) translateX(-200px);
+        }
+        svg{
+            width: 10vw;
+            min-width: 120px;
+            height: auto;
+            padding: 10px;
+        }
+        svg path:nth-child(1){
+            stroke-dasharray: 2376;
+            stroke-dashoffset: 2376;
+            animation: lineAnimation 2s ease forwards, lineFill 1s ease forwards 2.4s;
+        }
+        svg path:nth-child(2){
+            stroke-dasharray: 1657;
+            stroke-dashoffset: 1657;
+            animation: lineAnimation 2s ease forwards 0.2s,lineFill 1s ease forwards 2.4s;
+        }
+        @keyframes lineAnimation{
+            to{
+                stroke-dashoffset: 0;
+            }
+        }
+        @keyframes lineFill{
+            from{
+                fill: transparent;
+            }
+            to{
+                fill: #fff;
+                // stroke: none;
+            }
+        }
+    }
+    #foldableBot{
+        width: 100%;
+        height: 50vh;
+        background-image: url(image/Smoke.png);
+        background-position: 50vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        animation: moovingBg 240s linear infinite;
+
+        transform-origin: bottom;
+        transition: all 2s ease-in-out;
+        transform-style: preserve-3d;
+        #bgBlur{
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(30px);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .name{
+                text-align: center;
+                font-family: Kiona,sans-serif;
+                color: #fff;
+                z-index: 102;
+            }
+            .name h1{
+                padding: 5px;
+                font-size: 4rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5rem;
+            }
+            .name h2{
+                padding: 5px;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+@keyframes moovingBg {
+    to   {background-position: left;}
+    from {background-position: right;}
+}
+
+// ~~~  ~~~ Carousel
+#carousel{
+    background: cadetblue;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+#cards{
+    background: papayawhip;
+
+    width: fit-content;
+    height: fit-content;
+
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: absolute;
+}
+.card{
+    position: absolute;
+    background: #000;
+    width: 300px;
+    height: 500px;
+    border-radius: 5%;
+}
+
+
+// ~~~ Responsive
